@@ -1,5 +1,6 @@
 const curso = [...document.querySelectorAll(".opcoes")]
-const copiar = document.getElementById("copiar")
+const selecionar = document.getElementById("copiar")
+const retirar = document.getElementById("copiar2")
 const caixa1 = document.getElementById("caixa1")
 const caixa2 = document.getElementById("caixa2")
 
@@ -18,7 +19,7 @@ curso.forEach((opcao) => {
     })
 })
 
-copiar.addEventListener("click", () => {
+selecionar.addEventListener("click", () => {
     if(opcoesSelecionadas.length > 0){
         opcoesSelecionadas.forEach((opcao) => {
             opcao.classList.remove("selecionada")
@@ -27,6 +28,19 @@ copiar.addEventListener("click", () => {
         })
         opcoesSelecionadas = []
     } else {
-        alert('Nenhuma opção selecionada para copiar!')
+        alert('Nenhuma opção selecionada para selecionar!')
+    }
+})
+
+retirar.addEventListener("click", () => {
+    if(opcoesSelecionadas.length > 0){
+        opcoesSelecionadas.forEach((opcao) => {
+            opcao.classList.remove("selecionada")
+            opcao.classList.remove("destaque")
+            caixa1.appendChild(opcao)
+        })
+        opcoesSelecionadas = []
+    } else {
+        alert('Nenhuma opção selecionada para retirar!')
     }
 })
