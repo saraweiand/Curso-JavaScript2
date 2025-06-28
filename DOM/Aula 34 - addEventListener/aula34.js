@@ -4,8 +4,8 @@ const c1 = document.querySelector("#c1")
 const msg = () => {
     alert("clicou")
 }
-c1.addEventListener("click", msg)
 
+c1.addEventListener("click", msg)
 
 c1.addEventListener("click",()=>{
     alert("clicou2")
@@ -13,6 +13,7 @@ c1.addEventListener("click",()=>{
 })
 
 
-c1.addEventListener("click", (evt) => {
-    console.log(evt.target)
-})
+// c1.addEventListener("click", (evt) => {
+//     const el = evt.target
+//     el.classList.add("destaque")  // adiciona um evento a classe
+// })
